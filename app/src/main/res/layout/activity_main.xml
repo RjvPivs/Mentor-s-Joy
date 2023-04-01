@@ -23,6 +23,7 @@
         android:layout_width="187dp"
         android:layout_height="44dp"
         android:onClick="startWorkflow"
+        android:backgroundTint="@color/main"
         android:text="Начать работу"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"

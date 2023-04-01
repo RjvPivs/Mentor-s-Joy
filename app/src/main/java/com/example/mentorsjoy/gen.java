@@ -13,6 +13,8 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.io.IOException;
 public class gen {
@@ -20,7 +22,7 @@ public class gen {
     public static final String DEST = "results\\aboba.pdf";
     public static final String FONT = "res/raw/times_new_roman.ttf";
     public static final String FONT_BOLD = "res/raw/times_new_roman_bold.ttf";
-    public static void createPdf(String dest) throws IOException {
+    public static void createPdf(String dest, PdfData data) throws IOException {
         //Initialize PDF writer
         PdfWriter writer = new PdfWriter(dest);
 
@@ -46,19 +48,17 @@ public class gen {
         Cell row32 = new Cell();
         row32.add(new Paragraph("УТВЕРЖДАЮ").setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row41 = new Cell();
-        row41.add(new Paragraph("Приглашённый преподаватель департамента программной инженерии факультетакомпьютерных наук").setFont(font).setTextAlignment(TextAlignment.CENTER));
+        row41.add(new Paragraph(data.getMentorTitle()).setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row42 = new Cell();
-        row42.add(new Paragraph("Академический руководитель образовательной программы «Программная инженерия», профессор департамента программной инженерии, кандидат технических наук").setFont(font).setTextAlignment(TextAlignment.CENTER));
+        row42.add(new Paragraph(data.getAcademicalTitle()).setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row51 = new Cell();
-        row51.add(new Paragraph("Aboba").setFont(font));
+        row51.add(new Paragraph(data.getMentorName()).setFont(font));
         Cell row52 = new Cell();
-        row52.add(new Paragraph("Aboba").setFont(font));
+        row52.add(new Paragraph(data.getAcademicalName()).setFont(font));
         Cell main = new Cell(2, 2);
-        main.add(new Paragraph("Генератор документации «Радость научника»\nТехническое задание\nЛИСТ УТВЕРЖДЕНИЯ\nRU.17701729.05.15-01 ТЗ 01-1-ЛУ").setFont(bold).setTextAlignment(TextAlignment.CENTER));
+        main.add(new Paragraph(String.format("%s\nТехническое задание\nЛИСТ УТВЕРЖДЕНИЯ\nRU.17701729.05.%s ТЗ 01-1-ЛУ", data.getProjectName(), data.getProjectType())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
         Cell sign = new Cell(1, 2);
-        sign.add(new Paragraph("Исполнитель студент группы БПИ 206\n" +
-                "\t /В. А. Астафуров/\n").setFont(font).setTextAlignment(TextAlignment.RIGHT));
-
+        sign.add(new Paragraph(String.format("Исполнитель студент группы %s\n/%s/\n",data.getStudentGroup(),data.getStudentName())).setFont(font).setTextAlignment(TextAlignment.RIGHT));
         table.addCell(pad);
         table.addCell(row1);
         table.addCell(pad);
@@ -87,7 +87,6 @@ public class gen {
         table.addCell(new Cell().add(new Paragraph(" ")));
         table.addCell(sign);
         document.add(table);
-
         //Close document
         document.close();
     }
