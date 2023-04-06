@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     fun startWorkflow(view: View){
 
         //setupPermissions()
-        val infoActivity = Intent(this, InfoActivity::class.java)
-        startActivity(infoActivity)
+        val recActivity = Intent(this, RecyclerActivity::class.java)
+        startActivity(recActivity)
     }
     private fun setupPermissions() {
         val permission = ContextCompat.checkSelfPermission(this,

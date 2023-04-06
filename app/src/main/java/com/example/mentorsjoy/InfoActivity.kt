@@ -31,7 +31,7 @@ class InfoActivity : AppCompatActivity() {
             projectName.text.isEmpty() -> Toast.makeText(applicationContext,"Введите название проекта", Toast.LENGTH_SHORT).show()
             projectType.text.isEmpty() -> Toast.makeText(applicationContext,"Введите классификатор проекта", Toast.LENGTH_SHORT).show()
             else -> {
-                var pdfData: PdfData = PdfData()
+                var pdfData: PdfData = PdfData("temp")
                 pdfData.setStudentName(studentName.text.toString())
                 pdfData.setStudentGroup(groupName.text.toString())
                 pdfData.setAcademicalName(academName.text.toString())
@@ -40,9 +40,9 @@ class InfoActivity : AppCompatActivity() {
                 pdfData.setMentorTitle(mentorType.text.toString())
                 pdfData.setProjectName(projectName.text.toString())
                 pdfData.setProjectType(projectType.text.toString())
-                val choiceActivity = Intent(this, ChoiceActivity::class.java)
-                choiceActivity.putExtra("pdf", pdfData)
-                startActivity(choiceActivity)
+                val recyclerActivity = Intent(this, RecyclerActivity::class.java)
+                recyclerActivity.putExtra("pdf", pdfData)
+                startActivity(recyclerActivity)
             }
         }
     }

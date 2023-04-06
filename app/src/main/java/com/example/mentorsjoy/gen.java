@@ -65,7 +65,6 @@ public class gen {
         table2.addCell(new Cell().add(new Paragraph("Инв. № подл").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table2.addCell(new Cell().add(new Paragraph(" ")));
         document.add(table2);
-        document.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
     }
 
     private static void addAcceptancePage(PdfData data, Document document, PdfFont font, PdfFont bold) {
