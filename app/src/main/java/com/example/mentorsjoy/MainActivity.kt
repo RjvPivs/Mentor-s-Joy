@@ -11,8 +11,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = "PermissionDemo"
-    private val RECORD_REQUEST_CODE = 101
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,15 +21,6 @@ class MainActivity : AppCompatActivity() {
         //setupPermissions()
         val recActivity = Intent(this, RecyclerActivity::class.java)
         startActivity(recActivity)
-    }
-    private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(this,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE)
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i(TAG, "Permission to record denied")
-            makeRequest()
-        }
     }
 
     private fun makeRequest() {

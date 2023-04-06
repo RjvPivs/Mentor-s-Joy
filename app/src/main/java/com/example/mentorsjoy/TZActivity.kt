@@ -30,7 +30,7 @@ class TZActivity : AppCompatActivity() {
         val arguments = intent.extras
         pdfData = arguments!!.getSerializable("pdf") as PdfData
         var file = File(filesDir, "aboba.pdf")
-        gen.createPdf(file.canonicalPath, pdfData);
+        gen.createPdf(file.canonicalPath, pdfData, "TZ");
         pdfView = findViewById(R.id.pdfView)
         pdfView.fromFile(file).load()
         result = file

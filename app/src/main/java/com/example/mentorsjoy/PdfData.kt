@@ -1,20 +1,31 @@
 package com.example.mentorsjoy
 
-data class PdfData(val _projectName: String) : java.io.Serializable{
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "PDFs")
+data class PdfData(@PrimaryKey private var projectName: String) : java.io.Serializable{
+    @ColumnInfo(name="mentorTitle")
     private var mentorTitle //Дожность научрука
             : String? = null
+    @ColumnInfo(name="mentorName")
     private var mentorName //Имя научрука
             : String? = null
+    @ColumnInfo(name="academicalTitle")
     private var academicalTitle //Должность руководителя обр. программы
             : String? = null
+    @ColumnInfo(name="academicalName")
     private var academicalName //Имя руководителя обр. программы
             : String? = null
-    private var projectName //Название проекта
-            : String? = null
+    @ColumnInfo(name="projectType")
     private var projectType //Тип проекта (числа из кодификатора)
             : String? = null
+    @ColumnInfo(name="studentName")
     private var studentName //Имя студента
             : String? = null
+    @ColumnInfo(name="studentGroup")
     private var studentGroup //Группа студента
             : String? = null
 
@@ -51,11 +62,13 @@ data class PdfData(val _projectName: String) : java.io.Serializable{
     }
 
     fun setProjectName(s: String?) {
-        projectName = s
+        if (s != null) {
+            projectName = s
+        }
     }
 
     fun getProjectName(): String? {
-        return projectName
+            return projectName
     }
 
     fun setProjectType(s: String?) {
@@ -82,7 +95,4 @@ data class PdfData(val _projectName: String) : java.io.Serializable{
         return studentGroup
     }
 
-    init{
-        projectName = _projectName
-    }
 }

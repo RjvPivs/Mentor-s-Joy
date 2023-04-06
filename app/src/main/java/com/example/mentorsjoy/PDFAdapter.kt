@@ -1,11 +1,9 @@
 package com.example.mentorsjoy
 
-import android.content.Context
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mentorsjoy.databinding.PdfItemBinding
 
@@ -17,9 +15,11 @@ class PDFAdapter(val listener: Listener):RecyclerView.Adapter<PDFAdapter.PDFHold
             textView.text = pdf.getProjectName()
             textView2.text = pdf.getStudentName()
             //binding.imageView2.setIma
-
             itemView.setOnClickListener {
-                listener.onClick(pdf)
+                listener.onClickMove(pdf)
+            }
+            imageDelete.setOnClickListener{
+                listener.onClickDel(pdf)
             }
         }
     }
@@ -32,15 +32,24 @@ class PDFAdapter(val listener: Listener):RecyclerView.Adapter<PDFAdapter.PDFHold
     override fun getItemCount(): Int {
         return pdfList.size
     }
-
+    fun clear(){
+        pdfList.clear()
+    }
     override fun onBindViewHolder(holder: PDFHolder, position: Int) {
         holder.bind(pdfList[position], listener)
     }
+    @SuppressLint("NotifyDataSetChanged")
     fun addPDF(pdf: PdfData){
         pdfList.add(pdf)
         notifyDataSetChanged()
     }
+    @SuppressLint("NotifyDataSetChanged")
+    fun delete(pdf: PdfData){
+        pdfList.remove(pdf)
+        notifyDataSetChanged()
+    }
     interface Listener{
-        fun onClick(pdfData : PdfData)
+        fun onClickMove(pdfData : PdfData)
+        fun onClickDel(pdf: PdfData)
     }
 }

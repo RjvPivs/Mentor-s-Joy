@@ -18,10 +18,11 @@
         tools:listitem="@layout/pdf_item" />
 
     <Button
-        android:id="@+id/button2"
+        android:backgroundTint="@color/main"
+        android:id="@+id/buttonAddFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Добавить документ"
         app:layout_constraintBottom_toTopOf="@+id/rcView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
