@@ -1,5 +1,4 @@
-package com.example.mentorsjoy;
-
+package com.example.mentorsjoy.model;
 public class Section {
     public String title;
     public String[] paragraphs;

@@ -1,4 +1,4 @@
-package com.example.mentorsjoy;
+package com.example.mentorsjoy.backend;
 
 public class PdfPreset {
     private String docType;

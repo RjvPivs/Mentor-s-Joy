@@ -1,4 +1,4 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.example.mentorsjoy.repository.PdfData
+import com.example.mentorsjoy.R
 
 class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

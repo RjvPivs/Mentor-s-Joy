@@ -1,4 +1,7 @@
-package com.example.mentorsjoy;
+package com.example.mentorsjoy.backend;
+
+import com.example.mentorsjoy.model.Section;
+import com.example.mentorsjoy.repository.PdfData;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
@@ -19,15 +22,14 @@ import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.properties.VerticalAlignment;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
 import java.io.IOException;
-public class gen {
+
+public class Generator {
 
     public static final String DEST = "results\\aboba.pdf";
     public static final String FONT = "res/raw/times_new_roman.ttf";
     public static final String FONT_BOLD = "res/raw/times_new_roman_bold.ttf";
+
     public static void createPdf(String dest, PdfData data, String presetString) throws IOException {
         PdfPreset preset = new PdfPreset();
         preset.SetTypeName(presetString);
@@ -58,7 +60,7 @@ public class gen {
         Table table2 = new Table(UnitValue.createPercentArray(new float[]{1, 1, 24})).useAllAvailableWidth();
         Cell main2 = new Cell(5, 1).setBorder(Border.NO_BORDER);
         main2.add(new Paragraph(String.format("\n\n\n%s\n\n%s\n\nRU.17701729.05.%s %s 01-1\n\nЛистов 10", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
-        table2.addCell(new Cell(1,3).add(new Paragraph(String.format("УТВЕРЖДЕН\nRU.17701729.05.%s %s 01-1-ЛУ", data.getProjectType(), preset.getDocCode())).setFont(font)).setHeight(200).setBorder(Border.NO_BORDER));
+        table2.addCell(new Cell(1, 3).add(new Paragraph(String.format("УТВЕРЖДЕН\nRU.17701729.05.%s %s 01-1-ЛУ", data.getProjectType(), preset.getDocCode())).setFont(font)).setHeight(200).setBorder(Border.NO_BORDER));
         table2.addCell(new Cell().add(new Paragraph("Подп. и дата").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table2.addCell(new Cell().add(new Paragraph(" ")));
         table2.addCell(main2);
@@ -76,9 +78,9 @@ public class gen {
 
     private static void addAcceptancePage(PdfData data, PdfPreset preset, Document document, PdfFont font, PdfFont bold) {
         Table table = new Table(UnitValue.createPercentArray(new float[]{1, 1, 12, 12})).useAllAvailableWidth();
-        Cell row1 = new Cell(1,2).setBorder(Border.NO_BORDER);
+        Cell row1 = new Cell(1, 2).setBorder(Border.NO_BORDER);
         row1.add(new Paragraph("ПРАВИТЕЛЬСТВО РОССИЙСКОЙ ФЕДЕРАЦИИ\nНАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ «ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»").setFont(bold).setTextAlignment(TextAlignment.CENTER));
-        Cell row2 = new Cell(1,2).setBorder(Border.NO_BORDER);
+        Cell row2 = new Cell(1, 2).setBorder(Border.NO_BORDER);
         row2.add(new Paragraph("Факультет компьютерных наук\nОбразовательная программа «Программная инженерия»").setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row31 = new Cell().setBorder(Border.NO_BORDER);
         row31.add(new Paragraph("СОГЛАСОВАНО").setFont(font).setTextAlignment(TextAlignment.CENTER));
@@ -114,7 +116,7 @@ public class gen {
         table.addCell(row52);
         table.addCell(new Cell().add(new Paragraph("Подп. и дата").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table.addCell(new Cell().add(new Paragraph(" ")));
-        table.addCell(new Cell(1,2).add(new Paragraph(" ")).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell(1, 2).add(new Paragraph(" ")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("Инв. № дубл.").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table.addCell(new Cell().add(new Paragraph(" ")));
         table.addCell(main);
@@ -122,7 +124,7 @@ public class gen {
         table.addCell(new Cell().add(new Paragraph(" ")));
         table.addCell(new Cell().add(new Paragraph("Подп. и дата").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table.addCell(new Cell().add(new Paragraph(" ")));
-        table.addCell(new Cell(1,2).add(new Paragraph(" ")).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell(1, 2).add(new Paragraph(" ")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("Инв. № подл").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table.addCell(new Cell().add(new Paragraph(" ")));
         table.addCell(sign);
@@ -147,6 +149,7 @@ public class gen {
                 }
         }
     }
+
     private static void addHeaders(PdfDocument pdf, Document doc, PdfFont font, PdfData data) {
         for (int i = 3; i <= pdf.getNumberOfPages(); i++) {
             Paragraph pageNum = new Paragraph(String.format("%d", i - 1))
@@ -166,6 +169,7 @@ public class gen {
             doc.showTextAligned(header, x, y, i, TextAlignment.CENTER, VerticalAlignment.BOTTOM, 0);
         }
     }
+
     private static void addFooters(PdfDocument pdf, Document doc, PdfFont font) {
         for (int i = 1; i <= 2; i++) {
             Paragraph footer = new Paragraph("2023")
@@ -191,11 +195,13 @@ public class gen {
             doc.add(table);
         }
     }
+
     private static void addSourcesPage(Document document, PdfFont font, PdfFont bold) {
         document.add(new Paragraph("ПРИЛОЖЕНИЕ 1").setTextAlignment(TextAlignment.RIGHT).setFont(bold));
         document.add(new Paragraph("СПИСОК ИСПОЛЬЗУЕМОЙ ЛИТЕРАТУРЫ").setTextAlignment(TextAlignment.CENTER).setFont(bold));
         document.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
     }
+
     private static void addChangesPage(Document document, PdfFont font, PdfFont bold) {
         document.add(new Paragraph("ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ").setTextAlignment(TextAlignment.CENTER).setFont(bold));
         Table table = new Table(10).useAllAvailableWidth();

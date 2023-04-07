@@ -1,11 +1,13 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mentorsjoy.adapter.PDFAdapter
+import com.example.mentorsjoy.repository.PDFDataBase
+import com.example.mentorsjoy.repository.PdfData
 import com.example.mentorsjoy.databinding.ActivityRecyclerBinding
 
 class RecyclerActivity : AppCompatActivity(), PDFAdapter.Listener {

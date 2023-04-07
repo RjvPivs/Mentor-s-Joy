@@ -1,22 +1,19 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.view
 
-import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.content.ContentValues
-import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.os.ParcelFileDescriptor
-import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.provider.MediaStore
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mentorsjoy.repository.PdfData
+import com.example.mentorsjoy.R
+import com.example.mentorsjoy.backend.Generator
 import com.github.barteksc.pdfviewer.PDFView
 import java.io.File
-import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
 
@@ -30,7 +27,7 @@ class TZActivity : AppCompatActivity() {
         val arguments = intent.extras
         pdfData = arguments!!.getSerializable("pdf") as PdfData
         var file = File(filesDir, "aboba.pdf")
-        gen.createPdf(file.canonicalPath, pdfData, "TZ");
+        Generator.createPdf(file.canonicalPath, pdfData, "TZ");
         pdfView = findViewById(R.id.pdfView)
         pdfView.fromFile(file).load()
         result = file

@@ -1,9 +1,11 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mentorsjoy.repository.PdfData
+import com.example.mentorsjoy.R
 
 class ChoiceActivity : AppCompatActivity() {
     lateinit var pdfData: PdfData

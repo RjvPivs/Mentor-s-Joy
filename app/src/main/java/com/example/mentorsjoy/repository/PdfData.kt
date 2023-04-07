@@ -1,4 +1,4 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.repository
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

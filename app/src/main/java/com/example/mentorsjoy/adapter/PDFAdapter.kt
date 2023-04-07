@@ -1,11 +1,13 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mentorsjoy.R
 import com.example.mentorsjoy.databinding.PdfItemBinding
+import com.example.mentorsjoy.repository.PdfData
 
 class PDFAdapter(val listener: Listener):RecyclerView.Adapter<PDFAdapter.PDFHolder>() {
     val pdfList = ArrayList<PdfData>()

@@ -1,4 +1,4 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.repository
 
 import android.content.Context
 import androidx.room.Database
@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
 abstract class PDFDataBase : RoomDatabase() {
     abstract fun getDao(): Dao
     companion object{
-        fun get(context: Context) : PDFDataBase{
+        fun get(context: Context) : PDFDataBase {
             return Room.databaseBuilder(context.applicationContext, PDFDataBase::class.java, "PDFDB.db").build()
         }
     }

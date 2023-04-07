@@ -14,19 +14,19 @@
         android:theme="@style/Theme.MentorsJoy"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerActivity"
+            android:name=".view.RecyclerActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".view.InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".TZActivity"
+            android:name=".view.TZActivity"
             android:exported="false" />
         <activity
-            android:name=".ChoiceActivity"
+            android:name=".view.ChoiceActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

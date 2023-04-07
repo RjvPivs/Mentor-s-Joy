@@ -1,14 +1,12 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.view
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import com.example.mentorsjoy.repository.PDFDataBase
+import com.example.mentorsjoy.R
+import com.example.mentorsjoy.model.Sec
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +19,5 @@ class MainActivity : AppCompatActivity() {
         //setupPermissions()
         val recActivity = Intent(this, RecyclerActivity::class.java)
         startActivity(recActivity)
-    }
-
-    private fun makeRequest() {
-
     }
 }

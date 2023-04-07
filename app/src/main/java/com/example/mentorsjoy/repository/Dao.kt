@@ -1,8 +1,9 @@
-package com.example.mentorsjoy
+package com.example.mentorsjoy.repository
 
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.mentorsjoy.model.Sec
 import kotlinx.coroutines.flow.Flow
 
 @androidx.room.Dao
