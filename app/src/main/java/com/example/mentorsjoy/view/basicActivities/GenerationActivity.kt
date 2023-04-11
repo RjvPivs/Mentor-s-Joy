@@ -63,6 +63,14 @@ class GenerationActivity : AppCompatActivity() {
                     SectionConverter.CallConverter(document, type),
                     type)
             }
+            "RO"->{
+                var document = arguments!!.getSerializable("doc") as SectionsRO
+                Generator.createPdf(
+                    file.canonicalPath,
+                    pdfData,
+                    SectionConverter.CallConverter(document, type),
+                    type)
+            }
         }
         pdfView = findViewById(R.id.pdfView)
         pdfView.fromFile(file).load()
