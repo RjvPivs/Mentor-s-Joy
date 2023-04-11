@@ -4,30 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#FAFAFA"
+    tools:context=".view.basicActivities.MainActivity">
 
-    <ImageView
+
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView"
         android:layout_width="359dp"
         android:layout_height="288dp"
         android:contentDescription="generator"
+        android:src="@drawable/engine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
-        app:srcCompat="@drawable/img" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="187dp"
-        android:layout_height="44dp"
-        android:onClick="startWorkflow"
+        android:layout_height="48dp"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="startWorkflow"
         android:text="Начать работу"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/BCS"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="85dp"
+        android:fontFamily="@font/bcs"
+        android:text="Mentor`s"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.126" />
+
+    <TextView
+        android:id="@+id/BCS2"
+        android:layout_width="85dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="84dp"
+        android:fontFamily="@font/bcs"
+        android:text="Joy"
+        android:textColor="#BD0101"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BCS"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
 </androidx.constraintlayout.widget.ConstraintLayout>

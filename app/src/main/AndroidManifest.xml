@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
     <application
@@ -13,16 +14,82 @@
         android:theme="@style/Theme.MentorsJoy"
         tools:targetApi="31">
         <activity
-            android:name=".InfoActivity"
+            android:name=".RoCheckActivity"
             android:exported="false" />
         <activity
-            android:name=".TZActivity"
+            android:name=".view.additionalActivities.TPChoice.TPChoiceActivity"
             android:exported="false" />
         <activity
-            android:name=".ChoiceActivity"
+            android:name=".view.additionalActivities.PMIChoice.MethodsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.additionalActivities.PMIChoice.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PMIChoice.RequirementsDocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PMIChoice.RequirementsProgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PMIChoice.TargetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PMIChoice.IntroductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PMIChoice.PmiCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.FuncActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.TechActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.UsageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.TaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.TzCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.TZChoice.IntroductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PZChoice.UsageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PZChoice.ExpectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PZChoice.TechActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PZChoice.IntroductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.PZChoice.PZCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.basicActivities.RecyclerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.basicActivities.InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.basicActivities.GenerationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.basicActivities.ChoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.basicActivities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,40 +5,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoiceActivity">
+    tools:context=".view.basicActivities.ChoiceActivity">
 
     <Button
         android:id="@+id/tzButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="startPMI"
         android:text="Сгенерировать ПМИ"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pmiButton" />
 
     <Button
-        android:backgroundTint="@color/main"
         android:id="@+id/pzButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:onClick="startTZ"
         android:text="Сгенерировать ТЗ"
-        app:layout_constraintBottom_toTopOf="@+id/tzButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:backgroundTint="@color/main"
         android:id="@+id/pmiButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="startPZ"
         android:text="Сгенерировать ПЗ"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pzButton" />
+
+    <Button
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="startRO"
+        android:id="@+id/RoButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:text="Сгенерировать руководство оператора"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tzButton" />
+
+    <Button
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="startTP"
+        android:id="@+id/TpButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:text="Сгенерировать текст программы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RoButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

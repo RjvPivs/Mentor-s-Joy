@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.additionalActivities.PZChoice.PZCheckActivity">
+
+    <Button
+        android:id="@+id/firstPZ"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="buttonOne"
+        android:text="Введение"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/secondPZ"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="buttonTwo"
+        android:text="Назначение и применение"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstPZ" />
+
+    <Button
+        android:id="@+id/fifthPZ"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="buttonFive"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fourthPZ"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/thirdPZ"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="buttonThree"
+        android:text="Технические характеристики"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondPZ" />
+
+    <Button
+        android:id="@+id/fourthPZ"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="buttonFour"
+        android:text="Ожидаемые показатели"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPZ" />
+</androidx.constraintlayout.widget.ConstraintLayout>
