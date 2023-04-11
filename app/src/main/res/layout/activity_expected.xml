@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.additionalActivities.PZChoice.ExpectedActivity">
+
+    <Button
+        android:onClick="saveExpected"
+        android:id="@+id/savePZ4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advantage" />
+
+    <EditText
+        android:id="@+id/expectedNeed"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Предполагаемая потребность"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/advantage"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Экономические преимущетсва по сравнению с аналогами"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expectedNeed" />
+</androidx.constraintlayout.widget.ConstraintLayout>

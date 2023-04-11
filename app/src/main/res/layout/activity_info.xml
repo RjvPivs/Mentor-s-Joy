@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.InfoActivity">
+    tools:context=".view.basicActivities.InfoActivity">
 
     <EditText
         android:id="@+id/mentorName"
@@ -128,20 +128,21 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:backgroundTint="@color/main"
-        android:onClick="save"
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="71dp"
         android:layout_marginBottom="44dp"
-        android:hint="Сохранить данные"
+        android:backgroundTint="@color/main"
+        android:text="Сохранить данные"
         android:minWidth="48dp"
         android:minHeight="48dp"
+        android:onClick="save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/groupName"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.333" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.additionalActivities.PZChoice.TechActivity">
+
+    <EditText
+        android:id="@+id/taskPZ"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Постановка задачи на разработку программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/algPZ"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Описание алгоритма и функционирования программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskPZ" />
+
+    <EditText
+        android:id="@+id/choiceDataPZ"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Описание и обоснование выбора метода организации входных и выходных данных"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/algPZ" />
+
+    <EditText
+        android:id="@+id/choiceTechPz"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Описание и обоснование выбора технических и программных средств"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choiceDataPZ" />
+
+    <Button
+        android:onClick="saveTech"
+        android:id="@+id/savePZ3"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choiceTechPz" />
+</androidx.constraintlayout.widget.ConstraintLayout>

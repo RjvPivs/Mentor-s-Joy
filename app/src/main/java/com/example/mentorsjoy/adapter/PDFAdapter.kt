@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mentorsjoy.R
 import com.example.mentorsjoy.databinding.PdfItemBinding
-import com.example.mentorsjoy.repository.PdfData
+import com.example.mentorsjoy.model.PdfData
 
 class PDFAdapter(val listener: Listener):RecyclerView.Adapter<PDFAdapter.PDFHolder>() {
     val pdfList = ArrayList<PdfData>()
