@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.additionalActivities.RoChoice.RunningActivity">
+
+    <Button
+        android:id="@+id/saveRunningRO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="saveRunningRo"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/downloadRO"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Загрузка программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/usingRO"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Выполнение программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startRO" />
+
+    <EditText
+        android:id="@+id/startRO"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Запуск программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downloadRO" />
+
+    <EditText
+        android:id="@+id/finishRO"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Завершение программы"
+        android:inputType="textMultiLine|textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usingRO" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
