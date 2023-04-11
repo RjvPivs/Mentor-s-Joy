@@ -14,7 +14,19 @@
         android:theme="@style/Theme.MentorsJoy"
         tools:targetApi="31">
         <activity
-            android:name=".RoCheckActivity"
+            android:name=".view.additionalActivities.RoChoice.ConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.RoChoice.MessagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.RoChoice.RunningActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.RoChoice.UsageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.additionalActivities.RoChoice.RoCheckActivity"
             android:exported="false" />
         <activity
             android:name=".view.additionalActivities.TPChoice.TPChoiceActivity"

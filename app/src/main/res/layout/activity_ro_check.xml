@@ -6,4 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".view.additionalActivities.RoChoice.RoCheckActivity">
 
+    <Button
+        android:onClick="buttonOneRO"
+        android:id="@+id/buttonOneRO"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Назначение программы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:onClick="buttonTwoRO"
+        android:id="@+id/buttonTwoRO"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Условия выполнения программы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOneRO" />
+
+    <Button
+        android:onClick="buttonThreeRO"
+        android:id="@+id/buttonThreeRO"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Выполнение программы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTwoRO" />
+
+    <Button
+        android:onClick="buttonFourRO"
+        android:id="@+id/buttonFourRO"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Сообщения оператору"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonThreeRO" />
+
+    <Button
+        android:onClick="buttonFiveRO"
+        android:id="@+id/buttonFiveRO"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/main"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Сохранить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFourRO" />
 </androidx.constraintlayout.widget.ConstraintLayout>

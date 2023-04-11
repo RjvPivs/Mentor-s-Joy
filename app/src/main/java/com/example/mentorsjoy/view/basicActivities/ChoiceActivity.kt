@@ -8,6 +8,7 @@ import com.example.mentorsjoy.model.PdfData
 import com.example.mentorsjoy.R
 import com.example.mentorsjoy.view.additionalActivities.PMIChoice.PmiCheckActivity
 import com.example.mentorsjoy.view.additionalActivities.PZChoice.PZCheckActivity
+import com.example.mentorsjoy.view.additionalActivities.RoChoice.RoCheckActivity
 import com.example.mentorsjoy.view.additionalActivities.TPChoice.TPChoiceActivity
 import com.example.mentorsjoy.view.additionalActivities.TZChoice.TzCheckActivity
 
@@ -38,5 +39,10 @@ class ChoiceActivity : AppCompatActivity() {
         val TPChoiceActivity = Intent(this, TPChoiceActivity::class.java)
         TPChoiceActivity.putExtra("name", pdfData.getProjectName())
         startActivity(TPChoiceActivity)
+    }
+    fun startRO(view: View){
+        val RoCheckActivity = Intent(this, RoCheckActivity::class.java)
+        RoCheckActivity.putExtra("name", pdfData.getProjectName())
+        startActivity(RoCheckActivity)
     }
 }
