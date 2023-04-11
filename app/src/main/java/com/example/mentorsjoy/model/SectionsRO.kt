@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "ROs")
-data class SectionsRO(@PrimaryKey private var projectName: String) {
+data class SectionsRO(@PrimaryKey private var projectName: String) : java.io.Serializable {
     @ColumnInfo(name = "func")
     private var func //1.1
             : String? = null
