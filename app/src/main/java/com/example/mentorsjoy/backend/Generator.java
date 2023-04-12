@@ -17,6 +17,7 @@ import com.itextpdf.layout.properties.*;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Generator {
 
