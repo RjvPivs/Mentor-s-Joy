@@ -218,7 +218,7 @@ public class SectionConverter {
         res[4] = new Section(2);
         res[4].title = "СРЕДСТВА И ПОРЯДОК ИСПЫТАНИЙ";
         res[4].subtitles[0] = "Технические и программные средства, используемые во время испытаний";
-        res[4].subtitles[2] = "Порядок проведения испытаний";
+        res[4].subtitles[1] = "Порядок проведения испытаний";
         res[4].paragraphs[0] = sections.getHardware() != null ? sections.getHardware() : "";
         res[4].paragraphs[1] = sections.getTestsOrder() != null ? sections.getTestsOrder() : "";
         //Экономические

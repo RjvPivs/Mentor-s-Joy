@@ -22,14 +22,15 @@ import java.io.OutputStream
 class GenerationActivity : AppCompatActivity() {
     private lateinit var pdfView: PDFView
     private lateinit var result: File
+    private lateinit var type: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tzactivity)
         val arguments = intent.extras
         var pdfData = arguments!!.getSerializable("pdf") as PdfData
         var file = File(filesDir, "aboba.pdf")
-        var type = arguments!!.getString("type")
-        var document: Any = 1
+        type = arguments!!.getString("type")!!
+        lateinit var document: Any
         when (type) {
             "PZ" -> {
                 document = arguments!!.getSerializable("doc") as SectionsPZ
@@ -39,13 +40,13 @@ class GenerationActivity : AppCompatActivity() {
                 document = arguments!!.getSerializable("doc") as SectionsTZ
 
             }
-            "PMI"->{
+            "PMI" -> {
                 document = arguments!!.getSerializable("doc") as SectionsPMI
             }
-            "TP"->{
+            "TP" -> {
                 document = arguments!!.getSerializable("doc") as SectionsTP
             }
-            "RO"->{
+            "RO" -> {
                 document = arguments!!.getSerializable("doc") as SectionsRO
             }
         }
@@ -53,7 +54,8 @@ class GenerationActivity : AppCompatActivity() {
             file.canonicalPath,
             pdfData,
             SectionConverter.CallConverter(document, type),
-            type)
+            type
+        )
         pdfView = findViewById(R.id.pdfView)
         pdfView.fromFile(file).load()
         result = file
@@ -63,7 +65,15 @@ class GenerationActivity : AppCompatActivity() {
     fun createFile(view: View) {
         var resolver: ContentResolver = contentResolver
         var values: ContentValues = ContentValues()
-        values.put(MediaStore.MediaColumns.DISPLAY_NAME, "cursed_" + ".pdf")
+        lateinit var name: String
+        when (type) {
+            "PZ" -> name = "Poyasnitelnaya_zapiska"
+            "TZ" -> name = "Technicheskoe_zadanie"
+            "PMI" -> name = "metodika ispyraniy"
+            "TP" -> name = "Text programmy"
+            "RO" -> name = "Rukovodstvo operatora"
+        }
+        values.put(MediaStore.MediaColumns.DISPLAY_NAME, name + ".pdf")
         values.put(MediaStore.MediaColumns.MIME_TYPE, "application/pdf")
         values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
         val uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
