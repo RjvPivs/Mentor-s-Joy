@@ -9,6 +9,7 @@ import com.example.mentorsjoy.model.PdfData
 import com.example.mentorsjoy.model.SectionsPMI
 import com.example.mentorsjoy.repository.PDFDataBase
 import com.example.mentorsjoy.view.additionalActivities.PMIChoice.*
+import com.example.mentorsjoy.view.basicActivities.ChoiceActivity
 import com.example.mentorsjoy.view.basicActivities.GenerationActivity
 
 class PmiCheckActivity : AppCompatActivity() {
@@ -66,5 +67,10 @@ class PmiCheckActivity : AppCompatActivity() {
             generationActivity.putExtra("pdf", pdf)
             startActivity(generationActivity)
         }.start()
+    }
+    override fun onBackPressed() {
+        val choiceActivity = Intent(this, ChoiceActivity::class.java)
+        choiceActivity.putExtra("pdf", pdf)
+        startActivity(choiceActivity)
     }
 }

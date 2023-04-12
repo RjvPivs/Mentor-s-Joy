@@ -8,7 +8,9 @@ import com.example.mentorsjoy.R
 import com.example.mentorsjoy.model.PdfData
 import com.example.mentorsjoy.model.SectionsRO
 import com.example.mentorsjoy.repository.PDFDataBase
+import com.example.mentorsjoy.view.basicActivities.ChoiceActivity
 import com.example.mentorsjoy.view.basicActivities.GenerationActivity
+import com.example.mentorsjoy.view.basicActivities.MainActivity
 
 class RoCheckActivity : AppCompatActivity() {
     private lateinit var pdf: PdfData
@@ -56,5 +58,10 @@ class RoCheckActivity : AppCompatActivity() {
             generationActivity.putExtra("pdf", pdf)
             startActivity(generationActivity)
         }.start()
+    }
+    override fun onBackPressed() {
+        val choiceActivity = Intent(this, ChoiceActivity::class.java)
+        choiceActivity.putExtra("pdf", pdf)
+        startActivity(choiceActivity)
     }
 }

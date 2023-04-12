@@ -8,6 +8,7 @@ import com.example.mentorsjoy.R
 import com.example.mentorsjoy.repository.PDFDataBase
 import com.example.mentorsjoy.model.PdfData
 import com.example.mentorsjoy.model.SectionsPZ
+import com.example.mentorsjoy.view.basicActivities.ChoiceActivity
 import com.example.mentorsjoy.view.basicActivities.GenerationActivity
 
 class PZCheckActivity : AppCompatActivity() {
@@ -55,5 +56,10 @@ class PZCheckActivity : AppCompatActivity() {
             generationActivity.putExtra("pdf", pdf)
             startActivity(generationActivity)
         }.start()
+    }
+    override fun onBackPressed() {
+        val choiceActivity = Intent(this, ChoiceActivity::class.java)
+        choiceActivity.putExtra("pdf", pdf)
+        startActivity(choiceActivity)
     }
 }
