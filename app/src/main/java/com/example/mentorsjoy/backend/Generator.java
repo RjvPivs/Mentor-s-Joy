@@ -61,8 +61,8 @@ public class Generator {
     private static void addTitlePage(PdfData data, PdfPreset preset, Document document, PdfFont font, PdfFont bold) {
         Table table2 = new Table(UnitValue.createPercentArray(new float[]{1, 1, 24})).useAllAvailableWidth();
         Cell main2 = new Cell(5, 1).setBorder(Border.NO_BORDER);
-        main2.add(new Paragraph(String.format("\n\n\n%s\n\n%s\n\nRU.17701729.05.%s %s 01-1\n\nЛистов X", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
-        table2.addCell(new Cell(1,3).add(new Paragraph(String.format("УТВЕРЖДЕН\nRU.17701729.05.%s %s 01-1-ЛУ", data.getProjectType(), preset.getDocCode())).setFont(font).setFirstLineIndent(50F)).setHeight(200).setBorder(Border.NO_BORDER));
+        main2.add(new Paragraph(String.format("\n\n\n%s\n\n%s\n\nRU.17701729.%s-01 %s 01-1\n\nЛистов X", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
+        table2.addCell(new Cell(1,3).add(new Paragraph(String.format("УТВЕРЖДЕН\nRU.17701729.%s-01 %s 01-1-ЛУ", data.getProjectType(), preset.getDocCode())).setFont(font).setFirstLineIndent(50F)).setHeight(200).setBorder(Border.NO_BORDER));
         table2.addCell(new Cell().add(new Paragraph("Подп. и дата").setFont(font).setRotationAngle(1.57)).setHeight(100));
         table2.addCell(new Cell().add(new Paragraph(" ")));
         table2.addCell(main2);
@@ -98,7 +98,7 @@ public class Generator {
         row52.add(new Paragraph(String.format("__________%s\n«_»__________%d г.", data.getAcademicalName(), CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.CENTER));
 
         Cell main = new Cell(2, 2).setBorder(Border.NO_BORDER);
-        main.add(new Paragraph(String.format("%s\n\n%s\n\nЛИСТ УТВЕРЖДЕНИЯ\n\nRU.17701729.05.%s %s 01-1-ЛУ", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
+        main.add(new Paragraph(String.format("%s\n\n%s\n\nЛИСТ УТВЕРЖДЕНИЯ\n\nRU.17701729.%s-01 %s 01-1-ЛУ", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
         Cell sign = new Cell(1, 2).setBorder(Border.NO_BORDER);
         sign.add(new Paragraph(String.format("Исполнитель студент группы %s\n_____________/%s/\n", data.getStudentGroup(), data.getStudentName())).setFont(font).setTextAlignment(TextAlignment.RIGHT));
 
@@ -156,7 +156,7 @@ public class Generator {
                     .setFont(font)
                     .setFontSize(12)
                     .setFontColor(ColorConstants.BLACK, 0.5F);
-            Paragraph header = new Paragraph(String.format("RU.17701729.05.%s %s 01-1", data.getProjectType(), preset.getDocCode()))
+            Paragraph header = new Paragraph(String.format("RU.17701729.%s-01 %s 01-1", data.getProjectType(), preset.getDocCode()))
                     .setFont(font)
                     .setFontSize(12)
                     .setFontColor(ColorConstants.BLACK, 0.5F);
