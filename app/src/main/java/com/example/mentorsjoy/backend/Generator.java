@@ -23,7 +23,9 @@ public class Generator {
     public static final String DEST = "results\\aboba.pdf";
     public static final String FONT = "res/font/times_new_roman.ttf";
     public static final String FONT_BOLD = "res/font/times_new_roman_bold.ttf";
-    public static final int CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR);
+    public static final String CURRENT_YEAR = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+    public static final String CURRENT_MONTH = Calendar.getInstance().getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+    public static final String CURRENT_DAY = String.valueOf(Calendar.getInstance().get(Calendar.DATE));
 
     public static void createPdf(String dest, PdfData data, Section[] sections, String presetString) throws IOException {
         PdfPreset preset = new PdfPreset();
@@ -93,14 +95,14 @@ public class Generator {
         Cell row42 = new Cell().setBorder(Border.NO_BORDER);
         row42.add(new Paragraph(data.getAcademicalTitle()).setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row51 = new Cell().setBorder(Border.NO_BORDER);
-        row51.add(new Paragraph(String.format("__________%s\n«_»__________%d г.", data.getMentorName(), CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.CENTER));
+        row51.add(new Paragraph(String.format("__________%s\n«_»__________%s г.", data.getMentorName(), CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.CENTER));
         Cell row52 = new Cell().setBorder(Border.NO_BORDER);
-        row52.add(new Paragraph(String.format("__________%s\n«_»__________%d г.", data.getAcademicalName(), CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.CENTER));
+        row52.add(new Paragraph(String.format("__________%s\n«_»__________%s г.", data.getAcademicalName(), CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.CENTER));
 
         Cell main = new Cell(2, 2).setBorder(Border.NO_BORDER);
         main.add(new Paragraph(String.format("%s\n\n%s\n\nЛИСТ УТВЕРЖДЕНИЯ\n\nRU.17701729.%s-01 %s 01-1-ЛУ", data.getProjectName(), preset.getDocName(), data.getProjectType(), preset.getDocCode())).setFont(bold).setTextAlignment(TextAlignment.CENTER));
         Cell sign = new Cell(1, 2).setBorder(Border.NO_BORDER);
-        sign.add(new Paragraph(String.format("Исполнитель студент группы %s\n_____________/%s/\n", data.getStudentGroup(), data.getStudentName())).setFont(font).setTextAlignment(TextAlignment.RIGHT));
+        sign.add(new Paragraph(String.format("Исполнитель студент группы %s\n_____________/%s/\n%s %s %s", data.getStudentGroup(), data.getStudentName(), CURRENT_DAY, CURRENT_MONTH, CURRENT_YEAR)).setFont(font).setTextAlignment(TextAlignment.RIGHT));
 
         table.addCell(new Cell(1, 2).add(new Paragraph(" ")).setBorder(Border.NO_BORDER));
         table.addCell(row1);
@@ -171,7 +173,7 @@ public class Generator {
     }
     private static void addFooters(PdfDocument pdf, Document doc, PdfFont font) {
         for (int i = 1; i <= 2; i++) {
-            Paragraph footer = new Paragraph(String.format("%d", CURRENT_YEAR))
+            Paragraph footer = new Paragraph(String.format("%s", CURRENT_YEAR))
                     .setFont(font)
                     .setFontSize(12);
             Rectangle pageSize = pdf.getPage(i).getPageSize();
