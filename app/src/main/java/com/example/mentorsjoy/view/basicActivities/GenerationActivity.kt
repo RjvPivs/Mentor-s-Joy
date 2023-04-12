@@ -69,7 +69,7 @@ class GenerationActivity : AppCompatActivity() {
         when (type) {
             "PZ" -> name = "Poyasnitelnaya_zapiska"
             "TZ" -> name = "Technicheskoe_zadanie"
-            "PMI" -> name = "metodika ispyraniy"
+            "PMI" -> name = "Metodika ispytaniy"
             "TP" -> name = "Text programmy"
             "RO" -> name = "Rukovodstvo operatora"
         }
