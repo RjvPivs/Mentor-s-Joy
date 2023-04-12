@@ -44,7 +44,7 @@ public class Generator {
         addAcceptancePage(data, preset, document, font, bold);
         document.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
         addTitlePage(data, preset, document, font, bold);
-        document.setMargins(60, 40, 20, 40);
+        document.setMargins(60, 40, 80, 40);
         document.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
 
         writeSections(document, sections, font, bold);
@@ -278,7 +278,6 @@ public class Generator {
         table.addCell(new Cell(3, 1).add(new Paragraph("Разработка программы").setFont(font)));
         table.addCell(new Cell().add(new Paragraph("Отладка").setFont(font)));
         table.addCell(new Cell().add(new Paragraph("Проверка на соответствие техническому заданию").setFont(font)));
-        table.addCell(new Cell().add(new Paragraph("Разработка программной документации в соответствии с ЕСПД").setFont(font)));
         table.addCell(new Cell().add(new Paragraph("Разработка программной документации в соответствии с ЕСПД").setFont(font)));
 
         table.addCell(new Cell(1, 1).add(new Paragraph("Разработка программной документации").setFont(font)));

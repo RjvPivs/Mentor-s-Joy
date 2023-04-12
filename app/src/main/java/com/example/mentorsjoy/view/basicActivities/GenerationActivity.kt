@@ -28,50 +28,31 @@ class GenerationActivity : AppCompatActivity() {
         var pdfData = arguments!!.getSerializable("pdf") as PdfData
         var file = File(filesDir, "aboba.pdf")
         var type = arguments!!.getString("type")
+        var document: Any = 1
         when (type) {
             "PZ" -> {
-                var document = arguments!!.getSerializable("doc") as SectionsPZ
-                Generator.createPdf(
-                    file.canonicalPath,
-                    pdfData,
-                    SectionConverter.CallConverter(document, type),
-                    type
-                );
+                document = arguments!!.getSerializable("doc") as SectionsPZ
+
             }
             "TZ" -> {
-                var document = arguments!!.getSerializable("doc") as SectionsTZ
-                Generator.createPdf(
-                    file.canonicalPath,
-                    pdfData,
-                    SectionConverter.CallConverter(document, type),
-                    type
-                );
+                document = arguments!!.getSerializable("doc") as SectionsTZ
+
             }
             "PMI"->{
-                var document = arguments!!.getSerializable("doc") as SectionsPMI
-                Generator.createPdf(
-                    file.canonicalPath,
-                    pdfData,
-                    SectionConverter.CallConverter(document, type),
-                    type)
+                document = arguments!!.getSerializable("doc") as SectionsPMI
             }
             "TP"->{
-                var document = arguments!!.getSerializable("doc") as SectionsTP
-                Generator.createPdf(
-                    file.canonicalPath,
-                    pdfData,
-                    SectionConverter.CallConverter(document, type),
-                    type)
+                document = arguments!!.getSerializable("doc") as SectionsTP
             }
             "RO"->{
-                var document = arguments!!.getSerializable("doc") as SectionsRO
-                Generator.createPdf(
-                    file.canonicalPath,
-                    pdfData,
-                    SectionConverter.CallConverter(document, type),
-                    type)
+                document = arguments!!.getSerializable("doc") as SectionsRO
             }
         }
+        Generator.createPdf(
+            file.canonicalPath,
+            pdfData,
+            SectionConverter.CallConverter(document, type),
+            type)
         pdfView = findViewById(R.id.pdfView)
         pdfView.fromFile(file).load()
         result = file
