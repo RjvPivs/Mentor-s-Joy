@@ -142,9 +142,14 @@ public class SectionConverter {
         res[0].title = "ВВЕДЕНИЕ";
         res[0].paragraphs[0] = sections.getIntro() != null ? sections.getIntro() : "";
         //Текст
-        res[1] = new Section(1);
+        String temp = sections.getSource() != null ? sections.getSource() : "";
+        if (temp.startsWith("!")) {
+            res[1] = spliceParagraph(temp.substring(1));
+        } else {
+            res[1] = new Section(1);
+            res[1].paragraphs[0] = sections.getSource() != null ? sections.getSource() : "";
+        }
         res[1].title = "ОПИСАНИЕ ФАЙЛОВ С ИСХОДНЫМ КОДОМ ПРОГРАММЫ";
-        res[1].paragraphs[0] = sections.getSource() != null ? sections.getSource() : "";
         return res;
     }
     private static Section[] ConvertRO(SectionsRO sections) {
@@ -213,7 +218,12 @@ public class SectionConverter {
         //Требования
         res[3] = new Section(1);
         res[3].title = "ТРЕБОВАНИЯ К ПРОГРАММНОЙ ДОКУМЕНТАЦИИ";
-        res[3].paragraphs[0] = sections.getDoc() != null ? sections.getDoc() : "";
+        res[3].paragraphs[0] = "Состав программной документации:\n" +
+                "1) «Генератор документации «Радость научника»». Техническое задание (ГОСТ 19.201-78)\n" +
+                "2) «Генератор документации «Радость научника»». Программа и методика испытаний (ГОСТ 19.301-79)\n" +
+                "3) «Генератор документации «Радость научника»». Текст программы (ГОСТ 19.401-78)\n" +
+                "4) «Генератор документации «Радость научника»». Пояснительная записка (ГОСТ 19.404-79)\n" +
+                "5) «Генератор документации «Радость научника»». Руководство оператора (ГОСТ 19.505-79)\n";
         //Требование к документации
         res[4] = new Section(2);
         res[4].title = "СРЕДСТВА И ПОРЯДОК ИСПЫТАНИЙ";
@@ -232,6 +242,18 @@ public class SectionConverter {
         res[5].paragraphs[1] = sections.getFuncTests() != null ? sections.getFuncTests() : "";
         res[5].paragraphs[2] = sections.getInterTests() != null ? sections.getInterTests() : "";
         res[5].paragraphs[3] = sections.getRobustTests() != null ? sections.getRobustTests() : "";
+        return res;
+    }
+    private static Section spliceParagraph(String text) {
+        String[] spliced = text.split("\n\n");
+        Section res = new Section((spliced.length + 1) / 2);
+        for (int i = 0; i < spliced.length; i++) {
+            if (i % 2 == 0) {
+                res.subtitles[i / 2] = spliced[i];
+            } else {
+                res.paragraphs[i / 2] = spliced[i];
+            }
+        }
         return res;
     }
 }

@@ -45,4 +45,8 @@ class ChoiceActivity : AppCompatActivity() {
         RoCheckActivity.putExtra("name", pdfData.getProjectName())
         startActivity(RoCheckActivity)
     }
+    override fun onBackPressed() {
+        val recyclerActivity = Intent(this, RecyclerActivity::class.java)
+        startActivity(recyclerActivity)
+    }
 }
