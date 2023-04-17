@@ -143,8 +143,8 @@ public class SectionConverter {
         res[0].paragraphs[0] = sections.getIntro() != null ? sections.getIntro() : "";
         //Текст
         String temp = sections.getSource() != null ? sections.getSource() : "";
-        if (temp.startsWith("!")) {
-            res[1] = spliceParagraph(temp.substring(1));
+        if (temp.startsWith("<abs>")) {
+            res[1] = spliceParagraph(temp.substring(5));
         } else {
             res[1] = new Section(1);
             res[1].paragraphs[0] = sections.getSource() != null ? sections.getSource() : "";
@@ -245,14 +245,11 @@ public class SectionConverter {
         return res;
     }
     private static Section spliceParagraph(String text) {
-        String[] spliced = text.split("\n\n");
-        Section res = new Section((spliced.length + 1) / 2);
+        String[] spliced = text.split("<abs>");
+        Section res = new Section(spliced.length);
         for (int i = 0; i < spliced.length; i++) {
-            if (i % 2 == 0) {
-                res.subtitles[i / 2] = spliced[i];
-            } else {
-                res.paragraphs[i / 2] = spliced[i];
-            }
+            res.subtitles[i] = spliced[i].split("\n", 2)[0];
+            res.paragraphs[i] = spliced[i].split("\n",2)[1];
         }
         return res;
     }
